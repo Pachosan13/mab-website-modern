@@ -1,0 +1,22 @@
+Hola! 👋
+
+Necesito actualizar los perfiles de los abogados en el sitio web. Para cada uno, necesito:
+
+📚 ESTUDIOS
+- Lista completa de títulos, especializaciones, maestrías (con universidad y año)
+
+💼 EXPERIENCIA
+- Años totales de experiencia
+- 2-4 logros o experiencias destacadas (cargos públicos, casos importantes, etc.)
+
+🗣️ IDIOMAS
+- Lista de idiomas que habla y nivel (Nativo/Fluido/Intermedio/Básico)
+
+⚖️ ÁREAS DE PRÁCTICA
+- 3-5 áreas principales de especialización
+
+📸 FOTO
+- Foto profesional actualizada (si no la tienen)
+
+¿Puedes enviarme esta info para todos los abogados? Gracias! 🙏
+
