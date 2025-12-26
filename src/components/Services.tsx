@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { ArrowRight } from 'lucide-react';
 import { 
   Building2, 
   Calculator, 
@@ -17,7 +18,9 @@ import {
 import { getAllPracticeAreas } from '../data/practiceAreas';
 
 const Services = () => {
-  const practiceAreas = getAllPracticeAreas();
+  const allPracticeAreas = getAllPracticeAreas();
+  // Mostrar solo los 5 servicios más importantes
+  const practiceAreas = allPracticeAreas.slice(0, 5);
   
   const iconMap: { [key: string]: any } = {
     'derecho-corporativo-y-empresarial': Building2,
@@ -52,8 +55,8 @@ const Services = () => {
           </p>
         </div>
 
-        {/* Bento Grid Layout */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+        {/* Bento Grid Layout - Solo 5 servicios */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8 mb-12">
           {practiceAreas.map((area, index) => {
             const Icon = iconMap[area.slug] || Building2;
             return (
@@ -83,6 +86,17 @@ const Services = () => {
               </Link>
             );
           })}
+        </div>
+
+        {/* Link para ver más servicios */}
+        <div className="text-center" data-aos="fade-up" data-aos-duration="800">
+          <Link
+            to="/areas-de-practica"
+            className="inline-flex items-center bg-slate-900 text-white px-8 py-4 rounded-xl text-lg font-bold hover:bg-slate-800 transition-all duration-300 hover:scale-105 shadow-xl"
+          >
+            Ver Todos los Servicios
+            <ArrowRight className="ml-2 w-5 h-5" />
+          </Link>
         </div>
       </div>
     </section>
