@@ -40,7 +40,7 @@ const Location = () => {
                   </div>
                   <div>
                     <h4 className="font-semibold text-slate-900 mb-1">Horario</h4>
-                    <p className="text-slate-600">8:00 a.m. a 5:00 p.m.</p>
+                    <p className="text-slate-600">Lunes a viernes, 8:00 a.m. a 5:00 p.m.</p>
                   </div>
                 </div>
 
