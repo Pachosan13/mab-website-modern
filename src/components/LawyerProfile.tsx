@@ -6,9 +6,9 @@ interface LawyerProfileProps {
   foto_abogado: string;
   nombre_completo: string;
   cargo: string;
-  email: string;
+  email?: string;
   linkedin_url?: string;
-  telefono: string;
+  telefono?: string;
   bio_corta: string;
   bio_extendida: string;
   educacion_lista: string[];
@@ -20,15 +20,18 @@ const LawyerProfile: React.FC<LawyerProfileProps> = ({
   foto_abogado,
   nombre_completo,
   cargo,
-  email,
+  email = '',
   linkedin_url,
-  telefono,
+  telefono = '',
   bio_corta,
   bio_extendida,
   educacion_lista,
   areas_practica_lista,
   news_insights_lista
 }) => {
+  const hasEmail = Boolean(email) && !email.startsWith('TODO');
+  const hasPhone = Boolean(telefono) && !telefono.startsWith('TODO');
+  const hasLinkedin = Boolean(linkedin_url) && !linkedin_url.startsWith('TODO');
   const [openSections, setOpenSections] = useState<{ [key: string]: boolean }>({
     bio: false,
     educacion: false,
@@ -92,32 +95,38 @@ const LawyerProfile: React.FC<LawyerProfileProps> = ({
               </p>
 
               {/* Contact Icons */}
-              <div className="flex flex-col sm:flex-row gap-6 justify-center lg:justify-start mb-8">
-                <a 
-                  href={`mailto:${email}`}
-                  className="group flex items-center justify-center lg:justify-start bg-white/10 backdrop-blur-sm px-6 py-3 rounded-xl border border-white/20 hover:bg-white/20 hover:border-white/30 transition-all duration-300"
-                >
-                  <Mail className="w-6 h-6 text-white group-hover:scale-110 transition-transform duration-300" />
-                </a>
+              {(hasEmail || hasPhone || hasLinkedin) && (
+                <div className="flex flex-col sm:flex-row gap-6 justify-center lg:justify-start mb-8">
+                  {hasEmail && (
+                    <a 
+                      href={`mailto:${email}`}
+                      className="group flex items-center justify-center lg:justify-start bg-white/10 backdrop-blur-sm px-6 py-3 rounded-xl border border-white/20 hover:bg-white/20 hover:border-white/30 transition-all duration-300"
+                    >
+                      <Mail className="w-6 h-6 text-white group-hover:scale-110 transition-transform duration-300" />
+                    </a>
+                  )}
 
-                <a 
-                  href={`tel:${telefono}`}
-                  className="group flex items-center justify-center lg:justify-start bg-white/10 backdrop-blur-sm px-6 py-3 rounded-xl border border-white/20 hover:bg-white/20 hover:border-white/30 transition-all duration-300"
-                >
-                  <Phone className="w-6 h-6 text-white group-hover:scale-110 transition-transform duration-300" />
-                </a>
+                  {hasPhone && (
+                    <a 
+                      href={`tel:${telefono}`}
+                      className="group flex items-center justify-center lg:justify-start bg-white/10 backdrop-blur-sm px-6 py-3 rounded-xl border border-white/20 hover:bg-white/20 hover:border-white/30 transition-all duration-300"
+                    >
+                      <Phone className="w-6 h-6 text-white group-hover:scale-110 transition-transform duration-300" />
+                    </a>
+                  )}
 
-                {linkedin_url && (
-                  <a 
-                    href={linkedin_url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="group flex items-center justify-center lg:justify-start bg-white/10 backdrop-blur-sm px-6 py-3 rounded-xl border border-white/20 hover:bg-white/20 hover:border-white/30 transition-all duration-300"
-                  >
-                    <Linkedin className="w-6 h-6 text-white group-hover:scale-110 transition-transform duration-300" />
-                  </a>
-                )}
-              </div>
+                  {hasLinkedin && (
+                    <a 
+                      href={linkedin_url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group flex items-center justify-center lg:justify-start bg-white/10 backdrop-blur-sm px-6 py-3 rounded-xl border border-white/20 hover:bg-white/20 hover:border-white/30 transition-all duration-300"
+                    >
+                      <Linkedin className="w-6 h-6 text-white group-hover:scale-110 transition-transform duration-300" />
+                    </a>
+                  )}
+                </div>
+              )}
 
               {/* Short Bio */}
               <p className="text-xl text-slate-300 leading-relaxed">

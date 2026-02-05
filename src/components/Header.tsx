@@ -64,13 +64,16 @@ const Header = () => {
 
   return (
     <>
-      <header className={`fixed w-full z-50 transition-all duration-500 ${
-        isScrolled
-          ? 'bg-white/95 backdrop-blur-xl shadow-2xl border-b border-slate-200/20'
-          : 'bg-white/20 backdrop-blur-sm'
-      }`}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center py-6">
+      <header className="fixed w-full z-50">
+        <div
+          className={`mx-auto w-[92%] sm:w-[85%] lg:w-[67%] transition-all duration-500 rounded-2xl ${
+            isScrolled
+              ? 'bg-white/95 backdrop-blur-xl shadow-2xl border border-slate-200/20'
+              : 'bg-white/20 backdrop-blur-sm'
+          }`}
+        >
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex justify-between items-center py-6">
             <Link to="/" className="flex items-center hover:opacity-80 transition-opacity duration-300">
               <div className="w-16 h-16 sm:w-20 sm:h-20 lg:w-28 lg:h-28">
                 <img
@@ -222,6 +225,7 @@ const Header = () => {
                 />
               </div>
             </button>
+            </div>
           </div>
         </div>
       </header>

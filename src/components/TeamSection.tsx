@@ -14,16 +14,20 @@ const TeamSection = () => {
             <span className="text-amber-600 font-semibold text-lg tracking-wider uppercase">Nuestro Equipo</span>
           </div>
           <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
-            Abogados Expertos en MAB
+            Equipo legal de nuestra firma de abogados en Panamá
           </h2>
           <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
-            Conozca a nuestro equipo de abogados especializados, cada uno con experiencia comprobada 
-            en sus áreas de práctica y comprometidos con la excelencia legal.
+            Conozca a nuestro equipo de abogados especializados en servicios legales, comprometidos con
+            una asesoría legal precisa y discreta en el bufete legal.
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {lawyers.map((lawyer, index) => (
+          {lawyers.map((lawyer, index) => {
+            const hasEmail = Boolean(lawyer.email) && !lawyer.email.startsWith('TODO');
+            const hasLinkedin = Boolean(lawyer.linkedin_url) && !lawyer.linkedin_url.startsWith('TODO');
+
+            return (
             <div 
               key={lawyer.id}
               className="group bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-105 overflow-hidden border border-slate-100"
@@ -40,26 +44,30 @@ const TeamSection = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent"></div>
                 
                 {/* Contact overlay */}
-                <div className="absolute bottom-4 left-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <div className="flex space-x-3">
-                    <a 
-                      href={`mailto:${lawyer.email}`}
-                      className="w-10 h-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white/30 transition-colors duration-300"
-                    >
-                      <Mail className="w-5 h-5 text-white" />
-                    </a>
-                    {lawyer.linkedin_url && (
-                      <a 
-                        href={lawyer.linkedin_url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="w-10 h-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white/30 transition-colors duration-300"
-                      >
-                        <Linkedin className="w-5 h-5 text-white" />
-                      </a>
-                    )}
+                {(hasEmail || hasLinkedin) && (
+                  <div className="absolute bottom-4 left-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <div className="flex space-x-3">
+                      {hasEmail && (
+                        <a 
+                          href={`mailto:${lawyer.email}`}
+                          className="w-10 h-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white/30 transition-colors duration-300"
+                        >
+                          <Mail className="w-5 h-5 text-white" />
+                        </a>
+                      )}
+                      {hasLinkedin && (
+                        <a 
+                          href={lawyer.linkedin_url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="w-10 h-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white/30 transition-colors duration-300"
+                        >
+                          <Linkedin className="w-5 h-5 text-white" />
+                        </a>
+                      )}
+                    </div>
                   </div>
-                </div>
+                )}
               </div>
 
               <div className="p-8">
@@ -90,7 +98,8 @@ const TeamSection = () => {
                 </Link>
               </div>
             </div>
-          ))}
+          );
+          })}
         </div>
 
         {/* Call to Action */}
