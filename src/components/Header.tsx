@@ -65,21 +65,19 @@ const Header = () => {
   return (
     <>
       <header className={`fixed w-full z-50 transition-all duration-500 ${
-        isScrolled ? 'bg-white/95 backdrop-blur-xl shadow-2xl border-b border-slate-200/20' : 'bg-transparent'
+        isScrolled
+          ? 'bg-white/95 backdrop-blur-xl shadow-2xl border-b border-slate-200/20'
+          : 'bg-white/20 backdrop-blur-sm'
       }`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center py-6">
             <Link to="/" className="flex items-center hover:opacity-80 transition-opacity duration-300">
-              <div className="w-10 h-10 bg-white rounded-lg flex items-center justify-center mr-3 shadow-lg">
-                <img 
-                  src="/logo MAB1.png" 
-                  alt="MAB Logo" 
-                  className="w-full h-full object-contain p-1"
+              <div className="w-16 h-16 sm:w-20 sm:h-20 lg:w-28 lg:h-28">
+                <img
+                  src="/logo MAB1.png"
+                  alt="MAB Logo"
+                  className="w-full h-full object-contain"
                 />
-              </div>
-              <div>
-                  <h1 className="text-xl font-bold text-slate-900">Moreno & Arjona</h1>
-                  <p className="text-sm text-slate-600">Bureau</p>
               </div>
             </Link>
             
