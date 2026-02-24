@@ -24,7 +24,7 @@ const NewHeroSection = () => {
       <div className="absolute inset-0">
         {/* Background Image */}
         <img 
-          src="/fondohero.png" 
+          src="/EQUIPO2.jpeg" 
           alt="MAB Background" 
           className="absolute inset-0 w-full h-full object-cover"
         />
