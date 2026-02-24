@@ -243,7 +243,7 @@
   {
     "id": "nellie-marie-moreno-cordoba",
     "slug": "nellie-marie-moreno-cordoba",
-    "foto_abogado": "/team/patriciaaguila.jpg",
+    "foto_abogado": "/Imagen4.png",
     "foto_todo": "TODO: Falta foto de Nellie Marie Moreno Córdoba.",
     "nombre_completo": "Nellie Marie Moreno Córdoba",
     "cargo": "Abogado",
@@ -275,7 +275,7 @@
   {
     "id": "patricia-del-carmen-aguila-diaz",
     "slug": "patricia-del-carmen-aguila-diaz",
-    "foto_abogado": "/team/mariareina.jpg",
+    "foto_abogado": "/team/patriciaaguila.jpg",
     "foto_todo": "TODO: Falta foto de Patricia Del Carmen Aguila Díaz.",
     "nombre_completo": "Patricia Del Carmen Aguila Díaz",
     "cargo": "Socio abogado",
@@ -310,7 +310,7 @@
   {
     "id": "rodolfo-ernesto-stanziola-sierra",
     "slug": "rodolfo-ernesto-stanziola-sierra",
-    "foto_abogado": "/team/olivianewtonjohn.jpg",
+    "foto_abogado": "/Imagen4.png",
     "foto_todo": "TODO: Falta foto de Rodolfo Ernesto Stanziola Sierra.",
     "nombre_completo": "Rodolfo Ernesto Stanziola Sierra",
     "cargo": "Abogado",
@@ -343,7 +343,7 @@
   {
     "id": "luis-antonio-donadio-santamaria",
     "slug": "luis-antonio-donadio-santamaria",
-    "foto_abogado": "/team/rodrigolopez.jpg",
+    "foto_abogado": "/Imagen4.png",
     "foto_todo": "TODO: Falta foto de Luis Antonio Donadio Santamaría.",
     "nombre_completo": "Luis Antonio Donadio Santamaría",
     "cargo": "Abogado",
@@ -378,7 +378,7 @@
   {
     "id": "maria-gabriela-reyna",
     "slug": "maria-gabriela-reyna",
-    "foto_abogado": "/team/michaelsoto.jpg",
+    "foto_abogado": "/team/mariareina.jpg",
     "foto_todo": "TODO: Falta foto de Maria Gabriela Reyna.",
     "nombre_completo": "Maria Gabriela Reyna",
     "cargo": "Abogado",
@@ -413,7 +413,7 @@
   {
     "id": "corina-cano-cordoba",
     "slug": "corina-cano-cordoba",
-    "foto_abogado": "/team/rafaelvargas.jpg",
+    "foto_abogado": "/Imagen4.png",
     "foto_todo": "TODO: Falta foto de Corina Cano Córdoba.",
     "nombre_completo": "Corina Cano Córdoba",
     "cargo": "Abogado",
@@ -456,7 +456,7 @@
   {
     "id": "olivia-newton-john",
     "slug": "olivia-newton-john",
-    "foto_abogado": "/Imagen4.png",
+    "foto_abogado": "/team/olivianewtonjohn.jpg",
     "foto_todo": "TODO: Falta foto de Olivia Newton John.",
     "nombre_completo": "Olivia Newton John",
     "cargo": "Abogado",
@@ -491,7 +491,7 @@
   {
     "id": "rodrigo-rodolfo-lopez-maitin",
     "slug": "rodrigo-rodolfo-lopez-maitin",
-    "foto_abogado": "/Imagen4.png",
+    "foto_abogado": "/team/rodrigolopez.jpg",
     "foto_todo": "TODO: Falta foto de Rodrigo Rodolfo López Maitín.",
     "nombre_completo": "Rodrigo Rodolfo López Maitín",
     "cargo": "Abogado",
@@ -528,7 +528,7 @@
   {
     "id": "michael-soto-movilla",
     "slug": "michael-soto-movilla",
-    "foto_abogado": "/Imagen4.png",
+    "foto_abogado": "/team/michaelsoto.jpg",
     "foto_todo": "TODO: Falta foto de Michael Soto Movilla.",
     "nombre_completo": "Michael Soto Movilla",
     "cargo": "Abogado",
@@ -561,7 +561,7 @@
   {
     "id": "rafael-vargas-vergara",
     "slug": "rafael-vargas-vergara",
-    "foto_abogado": "/Imagen4.png",
+    "foto_abogado": "/team/rafaelvargas.jpg",
     "foto_todo": "TODO: Falta foto de Rafael Vargas Vergara.",
     "nombre_completo": "Rafael Vargas Vergara",
     "cargo": "Abogado",
