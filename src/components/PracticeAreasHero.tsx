@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { Scale, ChevronDown } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { ArrowRight, ChevronDown } from 'lucide-react';
 
 const PracticeAreasHero = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -9,59 +10,74 @@ const PracticeAreasHero = () => {
   }, []);
 
   return (
-    <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden pt-24">
-      {/* Background with Panama City skyline effect */}
-      <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-amber-900">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(120,119,198,0.3),transparent_50%)]"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(245,158,11,0.2),transparent_50%)]"></div>
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg%20width%3D%2260%22%20height%3D%2260%22%20viewBox%3D%220%200%2060%2060%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cg%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%3Cg%20fill%3D%22%23ffffff%22%20fill-opacity%3D%220.03%22%3E%3Cpath%20d%3D%22M36%2034v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6%2034v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6%204V0H4v4H0v2h4v4h2V6h4V4H6%22%2F%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E')] opacity-20"></div>
-      </div>
-      
-      {/* Animated background elements */}
+    <section className="relative min-h-[78vh] overflow-hidden pt-24 bg-slate-950">
       <div className="absolute inset-0">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-[32rem] h-[32rem] bg-blue-500/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
+        <img
+          src="/EQUIPO3.jpg"
+          alt="Equipo legal de MAB"
+          className="h-full w-full object-cover object-center scale-105"
+          loading="eager"
+          fetchPriority="high"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#050a14]/95 via-[#0a1528]/78 to-[#0b1220]/48" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_78%_22%,rgba(245,158,11,0.28),transparent_45%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_28%_82%,rgba(16,24,40,0.72),transparent_58%)]" />
+        <div className="absolute inset-0 border-y border-white/10" />
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <div className={`max-w-5xl mx-auto transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-          {/* Legal Scale Icon */}
-          <div className="flex justify-center mb-8">
-            <div className="w-20 h-20 bg-gradient-to-br from-amber-400 to-amber-600 rounded-2xl flex items-center justify-center shadow-2xl">
-              <Scale className="w-10 h-10 text-white" />
-            </div>
-          </div>
+      <div className="relative z-10 mx-auto grid min-h-[78vh] max-w-7xl grid-cols-1 items-end gap-10 px-4 pb-16 sm:px-6 lg:grid-cols-12 lg:px-8">
+        <div className={`lg:col-span-8 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+          <p className="mb-7 inline-flex items-center rounded-full border border-white/25 bg-white/10 px-4 py-2 text-xs font-semibold tracking-[0.24em] text-white/90 backdrop-blur-md">
+            MAB LEGAL STRATEGY
+          </p>
 
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-8 leading-tight">
-            Áreas de Práctica –{' '}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-amber-500 to-amber-600">
-              Moreno & Arjona Bureau
+          <h1 className="max-w-4xl text-4xl font-semibold leading-[1.05] text-white md:text-6xl lg:text-7xl">
+            Áreas de Práctica
+            <span className="mt-3 block bg-gradient-to-r from-amber-300 via-amber-400 to-amber-500 bg-clip-text text-transparent">
+              Precisión jurídica para decisiones críticas
             </span>
           </h1>
-          
-          <div className={`transition-all duration-1000 delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-            <p className="text-xl md:text-2xl text-slate-300 mb-8 leading-relaxed max-w-4xl mx-auto">
-              Descubre nuestras especialidades legales y cómo podemos ayudarte con soluciones jurídicas 
-              de alto nivel en Panamá.
-            </p>
 
-            <p className="text-lg text-slate-400 mb-12 max-w-3xl mx-auto leading-relaxed">
-              Cada área de práctica está respaldada por la experiencia de nuestros socios y el reconocimiento 
-              internacional de Legal500 y Chambers.
-            </p>
+          <p className="mt-8 max-w-3xl text-lg leading-relaxed text-slate-200 md:text-xl">
+            Combinamos visión estratégica, ejecución técnica y experiencia multisectorial para proteger patrimonio, escalar negocios y resolver conflictos complejos en Panamá.
+          </p>
+
+          <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">
+            <Link
+              to="/#contacto"
+              className="group inline-flex items-center justify-center rounded-xl bg-amber-500 px-7 py-4 text-base font-semibold text-slate-950 shadow-2xl shadow-amber-900/40 transition-all duration-300 hover:scale-[1.03] hover:bg-amber-400"
+            >
+              Agenda tu Consulta
+              <ArrowRight className="ml-2 h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
+            </Link>
+            <a
+              href="#lista-areas"
+              className="inline-flex items-center justify-center rounded-xl border border-white/30 bg-white/10 px-7 py-4 text-base font-semibold text-white backdrop-blur-md transition-all duration-300 hover:border-white/60 hover:bg-white/20"
+            >
+              Ver Especialidades
+            </a>
           </div>
 
-          {/* Trust indicators */}
-          <div className={`flex flex-col sm:flex-row gap-8 justify-center items-center mb-16 transition-all duration-1000 delay-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-            <div className="flex items-center bg-white/10 backdrop-blur-sm px-6 py-3 rounded-xl border border-white/20">
-              <span className="text-white font-semibold">12 Áreas Especializadas</span>
-            </div>
-            <div className="flex items-center bg-white/10 backdrop-blur-sm px-6 py-3 rounded-xl border border-white/20">
-              <span className="text-amber-400 font-semibold">Reconocimiento Internacional</span>
-            </div>
-            <div className="flex items-center bg-white/10 backdrop-blur-sm px-6 py-3 rounded-xl border border-white/20">
-              <span className="text-white font-semibold">Atención Personalizada</span>
-            </div>
+          <div className="mt-10 flex flex-wrap gap-3">
+            {['12 áreas especializadas', '45+ años de experiencia', 'Legal500 y Chambers'].map((item) => (
+              <span
+                key={item}
+                className="rounded-full border border-white/20 bg-black/30 px-4 py-2 text-sm font-medium text-slate-100 backdrop-blur-sm"
+              >
+                {item}
+              </span>
+            ))}
+          </div>
+        </div>
+
+        <div className={`hidden lg:block lg:col-span-4 transition-all duration-1000 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+          <div className="rounded-3xl border border-white/20 bg-white/10 p-6 backdrop-blur-xl shadow-2xl">
+            <p className="text-xs font-semibold tracking-[0.22em] text-white/70">ENFOQUE MAB</p>
+            <p className="mt-4 text-2xl font-semibold text-white">Estrategia legal con impacto real en negocio.</p>
+            <div className="mt-6 h-px w-full bg-gradient-to-r from-white/0 via-white/40 to-white/0" />
+            <p className="mt-6 text-sm leading-relaxed text-slate-200">
+              Desde estructuración corporativa hasta litigios complejos, cada intervención se diseña para reducir riesgo y maximizar protección patrimonial.
+            </p>
           </div>
         </div>
       </div>

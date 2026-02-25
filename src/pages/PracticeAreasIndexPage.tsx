@@ -1,8 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
-import { ArrowRight, Scale, ChevronDown } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import Header from '../components/Header';
+import PracticeAreasHero from '../components/PracticeAreasHero';
 import Footer from '../components/Footer';
 import { getAllPracticeAreas } from '../data/practiceAreas';
 
@@ -23,75 +24,10 @@ const PracticeAreasIndexPage = () => {
 
       <div className="min-h-screen bg-slate-50">
         <Header />
-        
-        {/* Hero Section */}
-        <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden pt-24">
-          {/* Background with Panama City skyline effect */}
-          <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-amber-900">
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(120,119,198,0.3),transparent_50%)]"></div>
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(245,158,11,0.2),transparent_50%)]"></div>
-          </div>
-          
-          {/* Animated background elements */}
-          <div className="absolute inset-0">
-            <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl animate-pulse"></div>
-            <div className="absolute bottom-1/4 right-1/4 w-[32rem] h-[32rem] bg-blue-500/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
-          </div>
-
-          <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <div className="max-w-5xl mx-auto">
-              {/* Legal Scale Icon */}
-              <div className="flex justify-center mb-8">
-                <div className="w-20 h-20 bg-gradient-to-br from-amber-400 to-amber-600 rounded-2xl flex items-center justify-center shadow-2xl">
-                  <Scale className="w-10 h-10 text-white" />
-                </div>
-              </div>
-
-              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-8 leading-tight">
-                Áreas de Práctica –{' '}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-amber-500 to-amber-600">
-                  Moreno & Arjona Bureau
-                </span>
-              </h1>
-              
-              <p className="text-xl md:text-2xl text-slate-300 mb-8 leading-relaxed max-w-4xl mx-auto">
-                Descubre nuestras especialidades legales y cómo podemos ayudarte con soluciones jurídicas 
-                de alto nivel en Panamá.
-              </p>
-
-              <p className="text-lg text-slate-400 mb-12 max-w-3xl mx-auto leading-relaxed">
-                Cada área de práctica está respaldada por la experiencia de nuestros socios y el reconocimiento 
-                internacional de Legal500 y Chambers.
-              </p>
-
-              {/* Trust indicators */}
-              <div className="flex flex-col sm:flex-row gap-8 justify-center items-center mb-16">
-                <div className="flex items-center bg-white/10 backdrop-blur-sm px-6 py-3 rounded-xl border border-white/20">
-                  <span className="text-white font-semibold">12 Áreas Especializadas</span>
-                </div>
-                <div className="flex items-center bg-white/10 backdrop-blur-sm px-6 py-3 rounded-xl border border-white/20">
-                  <span className="text-amber-400 font-semibold">Reconocimiento Internacional</span>
-                </div>
-                <div className="flex items-center bg-white/10 backdrop-blur-sm px-6 py-3 rounded-xl border border-white/20">
-                  <span className="text-white font-semibold">Atención Personalizada</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Scroll indicator */}
-          <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-            <div className="flex flex-col items-center">
-              <div className="w-8 h-12 border-2 border-white/50 rounded-full flex justify-center mb-2">
-                <div className="w-1 h-4 bg-white/50 rounded-full mt-2 animate-pulse"></div>
-              </div>
-              <ChevronDown className="w-6 h-6 text-white/50 animate-pulse" />
-            </div>
-          </div>
-        </section>
+        <PracticeAreasHero />
 
         {/* Practice Areas Grid */}
-        <section className="py-20 bg-gradient-to-b from-slate-50 to-white">
+        <section id="lista-areas" className="py-20 bg-gradient-to-b from-slate-50 to-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <div className="inline-block mb-6">
