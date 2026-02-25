@@ -8,10 +8,12 @@ const HeroSection = () => {
       {/* Background Image with Overlay */}
       <div className="absolute inset-0">
         <img 
-          src="/Imagen4.png" 
+          src="/EQUIPO2.jpeg" 
           alt="Equipo MAB" 
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover object-center"
           style={{ zIndex: 1 }}
+          loading="eager"
+          fetchPriority="high"
         />
         {/* Overlay 60% más oscuro para resaltar el headline */}
         <div className="absolute inset-0 bg-black/60" style={{ zIndex: 2 }}></div>
