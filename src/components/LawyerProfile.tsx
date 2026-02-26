@@ -4,6 +4,7 @@ import { ChevronDown, ChevronUp, Mail, Phone, Linkedin, ArrowLeft } from 'lucide
 
 interface LawyerProfileProps {
   foto_abogado: string;
+  foto_posicion?: string;
   nombre_completo: string;
   cargo: string;
   email?: string;
@@ -18,6 +19,7 @@ interface LawyerProfileProps {
 
 const LawyerProfile: React.FC<LawyerProfileProps> = ({
   foto_abogado,
+  foto_posicion = '50% 12%',
   nombre_completo,
   cargo,
   email = '',
@@ -78,7 +80,8 @@ const LawyerProfile: React.FC<LawyerProfileProps> = ({
                   <img 
                     src={foto_abogado} 
                     alt={nombre_completo}
-                    className="w-full h-full object-cover object-top"
+                    className="w-full h-full object-cover"
+                    style={{ objectPosition: foto_posicion }}
                   />
                 </div>
                 <div className="absolute -inset-4 bg-gradient-to-r from-amber-400/20 to-blue-400/20 rounded-3xl blur-xl -z-10"></div>

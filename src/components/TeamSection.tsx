@@ -38,7 +38,8 @@ const TeamSection = () => {
                   <img 
                     src={lawyer.foto_abogado} 
                     alt={lawyer.nombre_completo}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                    className="w-full h-full object-cover origin-top group-hover:scale-105 transition-transform duration-700"
+                    style={{ objectPosition: lawyer.foto_posicion ?? '50% 12%' }}
                   />
                 </div>
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent"></div>

@@ -4,6 +4,7 @@ export interface LawyerData {
   id: string;
   slug: string;
   foto_abogado: string;
+  foto_posicion?: string;
   foto_todo?: string;
   nombre_completo: string;
   cargo: string;

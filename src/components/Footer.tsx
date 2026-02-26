@@ -2,11 +2,20 @@ import React from 'react';
 import { Mail, Phone, MapPin, Scale } from 'lucide-react';
 
 const Footer = () => {
+  const footerPracticeItems = [
+    'Derecho Corporativo',
+    'Derecho Migratorio',
+    'Derecho Marítimo',
+    'Derecho Familia',
+    'Derecho Civil y Litigios',
+    'Otros'
+  ];
+
   return (
     <footer className="bg-slate-900 text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          <div className="lg:col-span-2">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-8">
+          <div className="lg:col-span-2 xl:col-span-2">
             <div className="flex items-center mb-6">
               <div className="w-12 h-12 bg-white rounded-lg flex items-center justify-center mr-4 shadow-lg">
                 <img 
@@ -31,14 +40,24 @@ const Footer = () => {
           </div>
 
           <div>
+            <h4 className="text-lg font-semibold mb-6">Área de Interés</h4>
+            <ul className="space-y-3 text-white">
+              {footerPracticeItems.map((item) => (
+                <li key={`interes-${item}`}>
+                  <a href="#" className="hover:text-amber-400 transition-colors duration-300">{item}</a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
             <h4 className="text-lg font-semibold mb-6">Servicios Principales</h4>
             <ul className="space-y-3 text-white">
-              <li><a href="#" className="hover:text-amber-400 transition-colors duration-300">Derecho Corporativo</a></li>
-              <li><a href="#" className="hover:text-amber-400 transition-colors duration-300">Derecho Tributario</a></li>
-              <li><a href="#" className="hover:text-amber-400 transition-colors duration-300">Derecho Marítimo</a></li>
-              <li><a href="#" className="hover:text-amber-400 transition-colors duration-300">Bienes Raíces</a></li>
-              <li><a href="#" className="hover:text-amber-400 transition-colors duration-300">Litigios</a></li>
-              <li><a href="#" className="hover:text-amber-400 transition-colors duration-300">Propiedad Intelectual</a></li>
+              {footerPracticeItems.map((item) => (
+                <li key={`servicio-${item}`}>
+                  <a href="#" className="hover:text-amber-400 transition-colors duration-300">{item}</a>
+                </li>
+              ))}
             </ul>
           </div>
 

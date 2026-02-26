@@ -3,39 +3,22 @@ import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import { 
   Building2, 
-  Calculator, 
   Ship, 
   Scale, 
   Heart, 
-  Shield, 
-  Stethoscope, 
-  Home, 
-  FileText, 
-  Lightbulb, 
-  Users, 
-  Plane 
+  Plane,
+  Briefcase
 } from 'lucide-react';
-import { getAllPracticeAreas } from '../data/practiceAreas';
 
 const Services = () => {
-  const allPracticeAreas = getAllPracticeAreas();
-  // Mostrar solo los 5 servicios más importantes
-  const practiceAreas = allPracticeAreas.slice(0, 5);
-  
-  const iconMap: { [key: string]: any } = {
-    'derecho-corporativo-y-empresarial': Building2,
-    'derecho-tributario-y-fiscal': Calculator,
-    'derecho-maritimo': Ship,
-    'derecho-civil-y-litigios': Scale,
-    'derecho-familiar': Heart,
-    'derecho-penal': Shield,
-    'lesiones-personales': Stethoscope,
-    'bienes-raices-e-inmobiliario': Home,
-    'testamentos-y-sucesiones': FileText,
-    'propiedad-intelectual': Lightbulb,
-    'derecho-laboral': Users,
-    'inmigracion-y-movilidad': Plane
-  };
+  const featuredServices = [
+    { nombre: 'Derecho Corporativo', slug: 'derecho-corporativo-y-empresarial', icon: Building2 },
+    { nombre: 'Derecho Migratorio', slug: 'inmigracion-y-movilidad', icon: Plane },
+    { nombre: 'Derecho Marítimo', slug: 'derecho-maritimo', icon: Ship },
+    { nombre: 'Derecho Familia', slug: 'derecho-familiar', icon: Heart },
+    { nombre: 'Derecho Civil y Litigios', slug: 'derecho-civil-y-litigios', icon: Scale },
+    { nombre: 'Otros', slug: '', icon: Briefcase }
+  ];
 
   return (
     <section id="servicios" className="py-32 bg-gradient-to-b from-white to-slate-50">
@@ -55,13 +38,13 @@ const Services = () => {
           </p>
         </div>
 
-        {/* Bento Grid Layout - Solo 5 servicios */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8 mb-12">
-          {practiceAreas.map((area, index) => {
-            const Icon = iconMap[area.slug] || Building2;
+        {/* Bento Grid Layout - Servicios principales */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-8 mb-12">
+          {featuredServices.map((area, index) => {
+            const Icon = area.icon;
             return (
               <Link
-                to={`/areas/${area.slug}`}
+                to={area.slug ? `/areas/${area.slug}` : '/areas-de-practica'}
                 key={index}
                 className="group relative p-8 bg-white rounded-3xl border border-slate-200/50 hover:border-amber-300/50 transition-all duration-500 hover:scale-105 hover:shadow-2xl cursor-pointer overflow-hidden"
                 style={{ animationDelay: `${index * 100}ms` }}
