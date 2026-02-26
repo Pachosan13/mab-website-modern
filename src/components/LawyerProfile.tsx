@@ -78,7 +78,7 @@ const LawyerProfile: React.FC<LawyerProfileProps> = ({
                   <img 
                     src={foto_abogado} 
                     alt={nombre_completo}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover object-top"
                   />
                 </div>
                 <div className="absolute -inset-4 bg-gradient-to-r from-amber-400/20 to-blue-400/20 rounded-3xl blur-xl -z-10"></div>

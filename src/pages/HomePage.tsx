@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
 import Header from '../components/Header';
 import HeroSection from '../components/HeroSection';
 import WhyChooseMAB from '../components/WhyChooseMAB';
@@ -9,23 +8,6 @@ import Contact from '../components/Contact';
 import Footer from '../components/Footer';
 
 const HomePage = () => {
-  const location = useLocation();
-
-  // Handle hash navigation when coming from other pages
-  useEffect(() => {
-    if (location.hash) {
-      // Small delay to ensure DOM is fully rendered
-      const timer = setTimeout(() => {
-        const element = document.querySelector(location.hash);
-        if (element) {
-          element.scrollIntoView({ behavior: 'smooth' });
-        }
-      }, 100);
-      
-      return () => clearTimeout(timer);
-    }
-  }, [location.hash]);
-
   // Initialize AOS on mount
   useEffect(() => {
     const initAOS = () => {

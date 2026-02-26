@@ -77,6 +77,33 @@ const TeamSection = () => {
                 <p className="text-amber-600 font-semibold mb-4">
                   {lawyer.cargo}
                 </p>
+
+                <div className="space-y-2 mb-4 text-sm">
+                  {hasEmail && (
+                    <a
+                      href={`mailto:${lawyer.email}`}
+                      className="inline-flex items-center gap-2 text-slate-600 hover:text-amber-700 transition-colors duration-300"
+                    >
+                      <Mail className="w-4 h-4" />
+                      {lawyer.email}
+                    </a>
+                  )}
+                  <div>
+                    {hasLinkedin ? (
+                      <a
+                        href={lawyer.linkedin_url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 text-slate-600 hover:text-amber-700 transition-colors duration-300"
+                      >
+                        <Linkedin className="w-4 h-4" />
+                        LinkedIn
+                      </a>
+                    ) : (
+                      <span className="text-slate-400">Sin cuenta de LinkedIn</span>
+                    )}
+                  </div>
+                </div>
                 
                 <div className="space-y-2 mb-6">
                   {lawyer.areas_practica_lista.slice(0, 2).map((specialty, idx) => (
